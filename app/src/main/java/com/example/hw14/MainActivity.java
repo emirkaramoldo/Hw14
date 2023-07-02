@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -71,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(view -> {
             if (email.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
                 Toast.makeText(MainActivity.this, "Вы успешно зарегистрировались", Toast.LENGTH_SHORT).show();
-                tvVhod.animate().alpha(0);
-                psw.animate().alpha(0);
-                email.animate().alpha(0);
-                password.animate().alpha(0);
-                button.animate().alpha(0);
-                qwert.animate().alpha(0);
+                tvVhod.setVisibility(View.GONE);
+                psw.setVisibility(View.GONE);
+                email.setVisibility(View.GONE);
+                password.setVisibility(View.GONE);
+                button.setVisibility(View.GONE);
+                qwert.setVisibility(View.GONE);
 
             } else {
                 Toast.makeText(MainActivity.this, "Неправильный логин и пароль", Toast.LENGTH_SHORT).show();
